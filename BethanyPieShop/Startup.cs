@@ -28,9 +28,9 @@ namespace BethanyPieShop
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddScoped<IPieRepository, MockPieRepository>();
+            services.AddScoped<IPieRepository, PieRepository>();
 
-            services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             //this allows to use MVC pattern in the application
             services.AddControllersWithViews();
