@@ -32,6 +32,13 @@ namespace BethanyPieShop
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            //since we have used Iservice in getcart method we can pass lambda as such
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+
+            services.AddHttpContextAccessor();
+
+            services.AddSession();
+
             //this allows to use MVC pattern in the application
             services.AddControllersWithViews();
 
@@ -52,6 +59,8 @@ namespace BethanyPieShop
             // these are the middlewares that were added
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 
