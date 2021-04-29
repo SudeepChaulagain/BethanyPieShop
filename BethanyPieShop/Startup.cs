@@ -32,6 +32,8 @@ namespace BethanyPieShop
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
             //since we have used Iservice in getcart method we can pass lambda as such
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
 
