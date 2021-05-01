@@ -29,6 +29,8 @@
                         @await Component.InvokeAsync("CategoryMenu")
                         @await Component.InvokeAsync("ShoppingCartSummary")
 
+                        <partial name="_LoginPartial"/>
+
                     </ul>
                 </div>
             </div>
@@ -45,5 +47,6 @@
             </div>
         </div>
     </div>
+    @RenderSection("Scripts", required:false)
 </body>
 </html>
